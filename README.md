@@ -26,3 +26,5 @@ Misc ( Exit Status & Redirectors & Quotes)
 Conditions ( if & case )
 Loops
 Project Setup using Scripting.
+
+# This File contains all the shell scripting basics we are going to learn for our project
