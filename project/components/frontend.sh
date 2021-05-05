@@ -10,25 +10,28 @@ PRINT "Installing Nginx"
 yum install nginx -y
 STAT $? "Nginx Installation"
 
-exit
 
-
-echo "------------------------------------------------------------------------------------------"
-
-
-
-systemctl enable nginx
-systemctl start nginx
-
+PRINT "Download Frontend Component"
 curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
+STAT $? "Download Frontend"
 
- cd /usr/share/nginx/html
- rm -rf *
- unzip /tmp/frontend.zip
- mv frontend-main/* .
- mv static/* .
- rm -rf frontend-master README.md
- mv localhost.conf /etc/nginx/default.d/roboshop.conf
+PRINT "Extract Frontend"
+cd /usr/share/nginx/html
+rm -rf *
+unzip /tmp/frontend.zip
+STAT $? "Extracting Frontend"
+
+mv frontend-main/* .
+mv static/* .
+rm -rf frontend-master README.md
+
+PRINT "Update Nginx Configuration"
+mv localhost.conf /etc/nginx/default.d/roboshop.conf
+STAT $? "Update Nginx Configuration"
+
+PRINT "Update Nginx Configuration"
+systemctl enable nginx
+systemctl restart nginx
+STAT $? "Restarting Nginx Service"
 
 
- systemctl restart nginx
