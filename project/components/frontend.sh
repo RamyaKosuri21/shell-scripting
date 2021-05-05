@@ -1,6 +1,16 @@
 #!/usr/bin/env bash
 
+
+PRINT "Installing Nginx"
 yum install nginx -y
+STAT $? "Nginx Installation"
+
+exit
+
+
+echo "------------------------------------------------------------------------------------------"
+
+
 
 systemctl enable nginx
 systemctl start nginx
