@@ -1,4 +1,6 @@
 catalogue:
-	@echo Installing catalogue
+	@sh components/catalogue.sh
 cart:
-	@echo Installing cart
+	@sh components/cart.sh
+
+
