@@ -81,7 +81,7 @@ Setup_Service()
 {
   PRINT "Setup SystemD Service for ${COMPONENT}"
   mv /home/roboshop/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service
-  sed -i -e 's/MONGO_DNSNAME/' /etc/systemd/system/${COMPONENT}.service
+  sed -i -e 's/MONGO_DNSNAME/mongodb.devopsb55.cf' /etc/systemd/system/${COMPONENT}.service
   systemctl daemon-reload && systemctl start ${COMPONENT} && systemctl enable ${COMPONENT}
   STAT $? "Starting ${COMPONENT} Service "
 }
