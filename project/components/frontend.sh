@@ -7,6 +7,7 @@ COMPONENT=frontend
 # source is the command which is going to execute all the functions and commands in common.sh and import to the command line
 # which is exactly opposite to export what we did while defining functions on server side and access them in intellij
 
+OS_Prereqs
 
 PRINT "Installing Nginx"
 yum install nginx -y

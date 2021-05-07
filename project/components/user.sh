@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 source components/common.sh
-COMPONENT=cart
+COMPONENT=user
 
 OS_Prereqs
 NodeJS_Setup
